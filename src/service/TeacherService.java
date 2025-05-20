@@ -3,6 +3,12 @@ import entity.enums.Role;
 import tools.Util;
 import static db.Datacourse.*;
 
+import db.Datacourse;
+import entity.User;
+import entity.enums.Role;
+
+import java.util.Scanner;
+
 public class TeacherService {
     public void addStudent (String groupId){
         int count = 0;
@@ -15,6 +21,7 @@ public class TeacherService {
         try {
             System.out.println(" Select the student you want to add to the group: ");
             int studentIndex = Util.scanner.nextInt();
+
 
             if(studentIndex > users.size() || studentIndex < 0){
                 System.out.println(" Invalid command. Try again ");
@@ -34,4 +41,5 @@ public class TeacherService {
             addStudent(groupId);
         }
     }
+
 }
