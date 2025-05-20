@@ -38,6 +38,8 @@ public class AdminService {
                     7 create group
                     8 edit group
                     """);
+
+           
             switch (scanner.nextLine()) {
                 case "1" -> {
                     return;
@@ -57,10 +59,56 @@ public class AdminService {
                 case "7" -> {
                 }
                 case "8" -> {
+
                 }
             }
         }
     }
+
+    private void editTeacher() {
+        for (int i = 0; i < users.size(); i++) {
+            if (Objects.equals(users.get(i).getRole(), Role.TEACHER))
+                System.out.println(users.get(i));
+        }
+        System.out.println("Enter teacher id");
+        String id = strScanner.nextLine();
+        for (int i = 0; i < users.size(); i++) {
+            if (Objects.equals(users.get(i).getId(), id) && Objects.equals(users.get(i).getRole(), Role.TEACHER)) {
+                while (true) {
+                    System.out.println("""
+                                0 exit
+                                1 Change fullname
+                                2 Change email
+                                3 Chnage password
+                                """);
+                    switch (scanner.nextInt()) {
+                        case 0 -> {
+                            return;
+                        }
+                        case 1 -> {
+                            System.out.println("Enter new name");
+                            users.get(i).setFullName(strScanner.nextLine());
+                            System.out.println("name successfully changed");
+                            return;
+                        }
+                        case 2 -> {
+                            System.out.println("Enter new email");
+                            users.get(i).setEmail(strScanner.nextLine());
+                            System.out.println("email successfully changed");
+                            return;
+                        }
+                        case 3 -> {
+                            System.out.println("Enter name password");
+                            users.get(i).setPassword(strScanner.nextLine());
+                            System.out.println("password successfully changed");
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 
     private void deleteTeacher() {
         for (User user : users) {
@@ -98,7 +146,10 @@ public class AdminService {
         System.out.println("Student not found!");
     }
 
-    public void addTeacher () {
+   
+    
+        public void addTeacher () {
+
             User user = new User();
             Scanner scanner = new Scanner(System.in);
             System.out.println("Ism kiriting :");
@@ -192,6 +243,7 @@ public class AdminService {
         }
 
         private void editStudent () {
+
             for (int i = 0; i < users.size(); i++) {
                 if (Objects.equals(users.get(i).getRole(), Role.STUDENT))
                     System.out.println(users.get(i));
@@ -237,4 +289,6 @@ public class AdminService {
         }
 
     }
+
+
 
