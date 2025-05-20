@@ -16,6 +16,11 @@ public class TeacherService {
             System.out.println(" Select the student you want to add to the group: ");
             int studentIndex = Util.scanner.nextInt();
 
+            if(studentIndex > users.size() || studentIndex < 0){
+                System.out.println(" Invalid command. Try again ");
+                addStudent(groupId);
+            }
+
         int indexGroup = 0;
         for (int i = 0; i < groups.size(); i++) {
             if (groups.get(i).getId().equals(groupId)){
@@ -26,6 +31,7 @@ public class TeacherService {
         System.out.println(" Student successfully added! ");
         }catch (Exception e){
             System.out.println(" Invalid command! try again");
+            addStudent(groupId);
         }
     }
 }
