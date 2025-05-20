@@ -9,8 +9,16 @@ public class Attendance {
     private String groupId;
     private User teacher;
     private List<StudentAttendanceDaily> attendedStudents;
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public Attendance() {
+    }
+
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
     public Attendance(String id, LocalDate date, String groupId, User teacher, List<StudentAttendanceDaily> attendedStudents) {
@@ -29,8 +37,27 @@ public class Attendance {
         this.id = id;
     }
 
+
     public LocalDate getDate() {
         return date;
+    }
+
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    public void setTeacher(User teacher) {
+        this.teacher = teacher;
+    }
+
+    public void setAttendedStudents(List<StudentAttendanceDaily> attendedStudents) {
+        this.attendedStudents = attendedStudents;
+    }
+
+
+    public User getTeacher() {
+        return teacher;
     }
 
     public void setDate(LocalDate date) {
@@ -71,4 +98,5 @@ public class Attendance {
                 ", attendedStudents=" + attendedStudents +
                 '}';
     }
+
 }

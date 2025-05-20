@@ -19,6 +19,7 @@ import entity.enums.Role;
 
 import java.util.Objects;
 
+import static db.Datacourse.users;
 import static tools.Util.*;
 import static db.Datacourse.*;
 
@@ -61,7 +62,8 @@ public class AdminService {
         System.out.println("Password kiriting:");
         String password = scanner.nextLine();
         User teacher = new User(fullName, email, password, Role.TEACHER);
-         Datacourse.users.add(teacher);
+        users.add(teacher);
+        Datacourse.users.add(teacher);
        users.add(teacher);
         System.out.println("Teacher qoshildi");
         }

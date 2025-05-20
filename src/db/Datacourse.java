@@ -9,6 +9,7 @@ import service.TeacherService;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.UUID;
 
 public class Datacourse {
@@ -18,6 +19,8 @@ public class Datacourse {
    public static ArrayList<StudentAttendanceDaily> studentAttendanceDailies= new ArrayList<>();
 
    public static ArrayList<User> teacher= new ArrayList<>();
+   public static List<Attendance> attendances = new ArrayList<>();
+
 
 
     static {

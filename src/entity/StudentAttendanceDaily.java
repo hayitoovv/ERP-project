@@ -7,10 +7,22 @@ public class StudentAttendanceDaily {
     private String studentName;
     private AttendanceStatus status;
 
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public void setStatus(AttendanceStatus status) {
+
+
     public StudentAttendanceDaily(){}
     public StudentAttendanceDaily(String studentId, String studentName, AttendanceStatus status) {
         this.studentId = studentId;
         this.studentName = studentName;
+
         this.status = status;
     }
 
@@ -18,12 +30,18 @@ public class StudentAttendanceDaily {
         return studentId;
     }
 
+
     public void setStudentId(String studentId) {
         this.studentId = studentId;
     }
 
+
     public String getStudentName() {
         return studentName;
+    }
+
+    public AttendanceStatus getStatus() {
+        return status;
     }
 
     public void setStudentName(String studentName) {
@@ -46,4 +64,5 @@ public class StudentAttendanceDaily {
                 ", status=" + status +
                 '}';
     }
+
 }
