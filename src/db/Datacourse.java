@@ -16,11 +16,9 @@ public class Datacourse {
    public static ArrayList<Attendance> attendances= new ArrayList<>();
    public static ArrayList<Group> groups= new ArrayList<>();
    public static ArrayList<StudentAttendanceDaily> studentAttendanceDailies= new ArrayList<>();
-<<<<<<< HEAD
-    
-=======
+
    public static ArrayList<User> teacher= new ArrayList<>();
->>>>>>> 7ee355f2f900db1115e19313ae651ec26afe1a79
+
 
     static {
         User user = new User("Admin","Admin","Admin", Role.ADMIN);

@@ -1,17 +1,11 @@
 package service;
 
-
-<<<<<<< HEAD
-
-
-=======
-import db.Datacourse;
+import db.Datacourse.*;
 import entity.User;
 import entity.enums.Role;
-
 import java.util.Scanner;
 
-
+import static db.Datacourse.users;
 import static tools.Util.*;
 
 public class AdminService {
@@ -45,6 +39,7 @@ public class AdminService {
     }
 
     public void addTeacher() {
+        User user = new User();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ism kiriting :");
         String fullName = scanner.nextLine();
@@ -53,9 +48,7 @@ public class AdminService {
         System.out.println("Password kiriting:");
         String password = scanner.nextLine();
         User teacher = new User(fullName, email, password, Role.TEACHER);
-
-        Datacourse.users.add(teacher);
-
+       users.add(teacher);
         System.out.println("Teacher qoshildi");
 
     }
@@ -63,15 +56,15 @@ public class AdminService {
     private void addStudent() {
         User user=new User();
         System.out.println("Enter fullName:");
-        user.setFullName(Strscanner.nextLine());
+        user.setFullName(strScanner.nextLine());
         System.out.println("Enter email:");
-        user.setEmail(Strscanner.nextLine());
+        user.setEmail(strScanner.nextLine());
         System.out.println("Enter password");
-        user.setPassword(Strscanner.nextLine());
+        user.setPassword(strScanner.nextLine());
         user.setRole(Role.STUDENT);
         users.add(user);
         System.out.println("Successfully added!");
 
     }
->>>>>>> 7ee355f2f900db1115e19313ae651ec26afe1a79
+
 }
