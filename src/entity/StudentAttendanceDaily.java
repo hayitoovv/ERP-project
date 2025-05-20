@@ -18,4 +18,15 @@ public class StudentAttendanceDaily {
         this.status = status;
     }
 
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public AttendanceStatus getStatus() {
+        return status;
+    }
 }

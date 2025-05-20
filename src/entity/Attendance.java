@@ -13,8 +13,12 @@ public class Attendance {
         this.id = id;
     }
 
+
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+    public LocalDate getDate() {
+        return date;
     }
 
     public void setGroupId(String groupId) {
@@ -29,5 +33,12 @@ public class Attendance {
         this.attendedStudents = attendedStudents;
     }
 
+
+    public User getTeacher() {
+        return teacher;
+    }
+    public List<StudentAttendanceDaily> getAttendedStudents() {
+        return attendedStudents;
+    }
 
 }
