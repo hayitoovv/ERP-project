@@ -1,16 +1,9 @@
 package service;
-
-import
-
 import entity.enums.Role;
-
-import java.util.Scanner;
-
+import tools.Util;
 import static db.Datacourse.*;
 
 public class TeacherService {
-    static Scanner sc = new Scanner(System.in);
-    static Scanner scStr = new Scanner(System.in);
     public void addStudent (String groupId){
         int count = 0;
         for (int i = 0; i < users.size(); i++) {
@@ -21,7 +14,7 @@ public class TeacherService {
         }
         try {
             System.out.println(" Select the student you want to add to the group: ");
-            int studentIndex = sc.nextInt();
+            int studentIndex = Util.scanner.nextInt();
 
         int indexGroup = 0;
         for (int i = 0; i < groups.size(); i++) {
