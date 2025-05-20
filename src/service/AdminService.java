@@ -20,5 +20,6 @@ public class AdminService {
         user.setPassword(Strscanner.nextLine());
         user.setRole(Role.STUDENT);
         users.add(user);
+        System.out.println("Successfully added!");
     }
 }
