@@ -3,12 +3,6 @@ import entity.enums.Role;
 import tools.Util;
 import static db.Datacourse.*;
 
-import db.Datacourse;
-import entity.User;
-import entity.enums.Role;
-
-import java.util.Scanner;
-
 public class TeacherService {
     public void addStudent (String groupId){
         int count = 0;
