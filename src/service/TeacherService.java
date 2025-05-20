@@ -6,6 +6,7 @@ import entity.enums.AttendanceStatus;
 import entity.enums.Role;
 import tools.Util;
 import static db.Datacourse.*;
+import static tools.Util.strScanner;
 
 
 import db.Datacourse;
@@ -20,6 +21,23 @@ import java.util.UUID;
 
 
 public class TeacherService {
+    public void service(){
+        while (true){
+            System.out.println("""
+                    0 exit
+                    1 
+                    """);
+            switch (strScanner.nextLine()){
+                case "0"->{
+                    return;
+                }
+            }
+        }
+    }
+
+
+
+
     public void addStudent (String groupId){
         int count = 0;
         for (int i = 0; i < users.size(); i++) {

@@ -119,7 +119,6 @@ public class AdminService {
             String password = scanner.nextLine();
             User teacher = new User(fullName, email, password, Role.TEACHER);
             users.add(teacher);
-            users.add(teacher);
             System.out.println("Teacher qoshildi");
         }
 
