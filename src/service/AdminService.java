@@ -1,5 +1,6 @@
 package service;
 
+
 import db.Datacourse;
 import entity.User;
 import entity.enums.Role;
@@ -54,7 +55,18 @@ public class AdminService {
         System.out.println("Teacher qoshildi");
 
     }
-    private void editTeacher() {
+
+    private void addStudent() {
+        User user=new User();
+        System.out.println("Enter fullName:");
+        user.setFullName(Strscanner.nextLine());
+        System.out.println("Enter email:");
+        user.setEmail(Strscanner.nextLine());
+        System.out.println("Enter password");
+        user.setPassword(Strscanner.nextLine());
+        user.setRole(Role.STUDENT);
+        users.add(user);
+        System.out.println("Successfully added!");
 
     }
 }
