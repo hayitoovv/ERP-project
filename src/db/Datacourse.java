@@ -5,6 +5,7 @@ import entity.Group;
 import entity.StudentAttendanceDaily;
 import entity.User;
 import entity.enums.Role;
+import service.TeacherService;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -15,7 +16,7 @@ public class Datacourse {
    public static ArrayList<Attendance> attendances= new ArrayList<>();
    public static ArrayList<Group> groups= new ArrayList<>();
    public static ArrayList<StudentAttendanceDaily> studentAttendanceDailies= new ArrayList<>();
-   public static ArrayList<StudentAttendanceDaily> studentAttendanceDailies2= new ArrayList<>();
+   public static ArrayList<User> teacher= new ArrayList<>();
 
     static {
         User user = new User("Admin","Admin","Admin", Role.ADMIN);
