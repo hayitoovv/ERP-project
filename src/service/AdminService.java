@@ -22,7 +22,6 @@ public class AdminService {
                 }
                 case "2"->{}
                 case "3"->{
-                    editTeacher();
                 }
                 case "4"->{}
                 case "5"->{}
