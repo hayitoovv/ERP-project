@@ -2,11 +2,14 @@ package entity;
 
 import entity.enums.Role;
 
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.UUID;
 
+import static db.Datacourse.teacher;
+
 public class User {
-    private final String id= UUID.randomUUID().toString() ;
+    private String id= UUID.randomUUID().toString() ;
     private String fullName;
     private String email;
     private String password;
@@ -23,6 +26,13 @@ public class User {
     public String getId() {
         return id;
     }
+    public void setId(String id) {
+        this.id = id;
+    }
+    public ArrayList<User> getTeacher() {
+        return teacher;
+    }
+
 
 
     public String getFullName() {
