@@ -29,7 +29,7 @@ public class AdminService {
                     7 create group
                     8 edit group
                     """);
-            switch (Strscanner.nextLine()){
+            switch (strScanner.nextLine()){
                 case "1"->{
                     return;
                 }
@@ -42,6 +42,50 @@ public class AdminService {
                 case "6"->{}
                 case "7"->{}
                 case "8"->{}
+            }
+        }
+    }
+
+    private void editTeacher() {
+        for (int i = 0; i < users.size(); i++) {
+            if (Objects.equals(users.get(i).getRole(), Role.TEACHER))
+                System.out.println(users.get(i));
+        }
+        System.out.println("Enter teacher id");
+        String id = strScanner.nextLine();
+        for (int i = 0; i < users.size(); i++) {
+            if (Objects.equals(users.get(i).getId(), id) && Objects.equals(users.get(i).getRole(), Role.TEACHER)) {
+                while (true) {
+                    System.out.println("""
+                                0 exit
+                                1 Change fullname
+                                2 Change email
+                                3 Chnage password
+                                """);
+                    switch (scanner.nextInt()) {
+                        case 0 -> {
+                            return;
+                        }
+                        case 1 -> {
+                            System.out.println("Enter new name");
+                            users.get(i).setFullName(strScanner.nextLine());
+                            System.out.println("name successfully changed");
+                            return;
+                        }
+                        case 2 -> {
+                            System.out.println("Enter new email");
+                            users.get(i).setEmail(strScanner.nextLine());
+                            System.out.println("email successfully changed");
+                            return;
+                        }
+                        case 3 -> {
+                            System.out.println("Enter name password");
+                            users.get(i).setPassword(strScanner.nextLine());
+                            System.out.println("password successfully changed");
+                            return;
+                        }
+                    }
+                }
             }
         }
     }
@@ -59,13 +103,10 @@ public class AdminService {
        users.add(teacher);
         System.out.println("Teacher qoshildi");
         }
-    public void service() {
-        editStudent();
-    }
 
 
     private void addStudent() {
-        User user=new User();
+        User user = new User();
         System.out.println("Enter fullName:");
         user.setFullName(strScanner.nextLine());
         System.out.println("Enter email:");
@@ -77,48 +118,48 @@ public class AdminService {
         System.out.println("Successfully added!");
 
 
-    private void editStudent() {
-        for (int i = 0; i < users.size(); i++) {
-            if (Objects.equals(users.get(i).getRole(), Role.STUDENT))
-                System.out.println(users.get(i));
-        }
-        System.out.println("Enter Student id");
-        String id = Strscanner.nextLine();
-        for (int i = 0; i < users.size(); i++) {
-            if (Objects.equals(users.get(i).getId(), id) && Objects.equals(users.get(i).getRole(), Role.STUDENT)) {
-                while (true) {
-                    System.out.println("""
-                            0 exit
-                            1 Change fullname
-                            2 Change email
-                            3 Chnage password
-                            """);
-                    switch (scanner.nextInt()) {
-                        case 0 -> {
-                            return;
-                        }
-                        case 1 -> {
-                            System.out.println("Enter new name");
-                            users.get(i).setFullName(Strscanner.nextLine());
-                            System.out.println("name successfully changed");
-                            return;
-                        }
-                        case 2 -> {
-                            System.out.println("Enter new email");
-                            users.get(i).setEmail(Strscanner.nextLine());
-                            System.out.println("email successfully changed");
-                            return;
-                        }
-                        case 3 -> {
-                            System.out.println("Enter name password");
-                            users.get(i).setPassword(Strscanner.nextLine());
-                            System.out.println("password successfully changed");
-                            return;
+        private void editStudent (){
+            for (int i = 0; i < users.size(); i++) {
+                if (Objects.equals(users.get(i).getRole(), Role.STUDENT))
+                    System.out.println(users.get(i));
+            }
+            System.out.println("Enter Student id");
+            String id = strScanner.nextLine();
+            for (int i = 0; i < users.size(); i++) {
+                if (Objects.equals(users.get(i).getId(), id) && Objects.equals(users.get(i).getRole(), Role.STUDENT)) {
+                    while (true) {
+                        System.out.println("""
+                                0 exit
+                                1 Change fullname
+                                2 Change email
+                                3 Chnage password
+                                """);
+                        switch (scanner.nextInt()) {
+                            case 0 -> {
+                                return;
+                            }
+                            case 1 -> {
+                                System.out.println("Enter new name");
+                                users.get(i).setFullName(strScanner.nextLine());
+                                System.out.println("name successfully changed");
+                                return;
+                            }
+                            case 2 -> {
+                                System.out.println("Enter new email");
+                                users.get(i).setEmail(strScanner.nextLine());
+                                System.out.println("email successfully changed");
+                                return;
+                            }
+                            case 3 -> {
+                                System.out.println("Enter name password");
+                                users.get(i).setPassword(strScanner.nextLine());
+                                System.out.println("password successfully changed");
+                                return;
+                            }
                         }
                     }
                 }
             }
         }
     }
-
 }
