@@ -8,6 +8,7 @@ public class StudentAttendanceDaily {
     private AttendanceStatus status;
 
     public StudentAttendanceDaily(){}
+
     public StudentAttendanceDaily(String studentId, String studentName, AttendanceStatus status) {
         this.studentId = studentId;
         this.studentName = studentName;
@@ -46,4 +47,5 @@ public class StudentAttendanceDaily {
                 ", status=" + status +
                 '}';
     }
+
 }
