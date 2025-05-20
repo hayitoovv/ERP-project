@@ -11,7 +11,9 @@ public class Attendance {
     private User teacher;
     private List<StudentAttendanceDaily> attendedStudents;
 
-    public Attendance(){}
+    public Attendance() {
+    }
+
     public Attendance(LocalDate date, String groupId, User teacher, List<StudentAttendanceDaily> attendedStudents) {
         this.date = date;
         this.groupId = groupId;
@@ -56,8 +58,7 @@ public class Attendance {
     }
 
     @Override
-    public String
-    toString() {
+    public String toString() {
         return "Attendance{" +
                 "id='" + id + '\'' +
                 ", date=" + date +

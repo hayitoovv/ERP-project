@@ -6,6 +6,10 @@ import tools.Util;
 import static db.Datacourse.*;
 import static entity.Attendance.*;
 public class TeacherService {
+    public void service(){
+
+    }
+
     public void addStudent (String groupId){
         int count = 0;
         for (int i = 0; i < users.size(); i++) {
@@ -37,10 +41,34 @@ public class TeacherService {
             addStudent(groupId);
         }
     }
+    public void removeStudent (String groupId){
+        int indexGroup = 0;
+        for (int i = 0; i < groups.size(); i++) {
+            if (groups.get(i).getId().equals(groupId)){
+                indexGroup = i;
+            }
+        }
+        for (int i = 0; i < groups.get(indexGroup).getStudents().size(); i++) {
+            System.out.println(i + ". " + groups.get(indexGroup).getStudents());
+        }
+        try {
+            System.out.println(" Who will we eliminate: ");
+            int studentIndex = Util.scanner.nextInt();
+            if(studentIndex > users.size() || studentIndex < 0){
+                System.out.println(" Invalid command. Try again ");
+                addStudent(groupId);
+            }
+
+            groups.get(indexGroup).getStudents().remove(studentIndex);
+            System.out.println(" Student is removed successfully! ");
+        }catch (Exception e){
+            System.out.println(" Invalid command. Try again ");
+            removeStudent(groupId);
+        }
+    }
     public void showAttendance(){
         for (int i = 0; i < studentAttendanceDailies.size(); i++) {
             System.out.println(studentAttendanceDailies.get(i));
         }
     }
-
 }
