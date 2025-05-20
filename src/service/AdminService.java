@@ -34,10 +34,14 @@ public class AdminService {
                 case "1"->{
                     return;
                 }
-                case "2"->{}
+                case "2"->{
+
+                }
                 case "3"->{
                 }
-                case "4"->{}
+                case "4"->{
+                    editStudent();
+                }
                 case "5"->{}
                 case "6"->{}
                 case "7"->{}
@@ -60,9 +64,6 @@ public class AdminService {
 
         System.out.println("Teacher qoshildi");
         }
-    public void service() {
-        editStudent();
-    }
 
     private void editStudent() {
         for (int i = 0; i < users.size(); i++) {

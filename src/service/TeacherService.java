@@ -1,14 +1,10 @@
 package service;
+
 import entity.enums.Role;
 import tools.Util;
+
 import static db.Datacourse.*;
-
-import db.Datacourse;
-import entity.User;
-import entity.enums.Role;
-
-import java.util.Scanner;
-
+import static entity.Attendance.*;
 public class TeacherService {
     public void addStudent (String groupId){
         int count = 0;
@@ -39,6 +35,11 @@ public class TeacherService {
         }catch (Exception e){
             System.out.println(" Invalid command! try again");
             addStudent(groupId);
+        }
+    }
+    public void showAttendance(){
+        for (int i = 0; i < studentAttendanceDailies.size(); i++) {
+            System.out.println(studentAttendanceDailies.get(i));
         }
     }
 
