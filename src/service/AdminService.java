@@ -49,8 +49,10 @@ public class AdminService {
                 case "4" -> {
                 }
                 case "5" -> {
+                    deleteStudent();
                 }
                 case "6" -> {
+                    deleteTeacher();
                 }
                 case "7" -> {
                 }
@@ -60,7 +62,43 @@ public class AdminService {
         }
     }
 
-        public void addTeacher () {
+    private void deleteTeacher() {
+        for (User user : users) {
+            if (user.getRole() == TEACHER) {
+                System.out.println(user);
+            }
+        }
+        System.out.println("Enter teacher id to delete: ");
+        String id = strScanner.nextLine();
+        for (User user : users) {
+            if (Objects.equals(user.getId(), id) && user.getRole() == TEACHER) {
+                users.remove(user);
+                System.out.println("Teacher successfully deleted!");
+                return;
+            }
+        }
+        System.out.println("Teacher not found!");
+    }
+
+    private void deleteStudent() {
+        for (User user : users) {
+            if (user.getRole() == STUDENT) {
+                System.out.println(user);
+            }
+        }
+        System.out.println("Enter student id to delete: ");
+        String id = strScanner.nextLine();
+        for (User user : users) {
+            if (Objects.equals(user.getId(), id) && user.getRole() == STUDENT) {
+                users.remove(user);
+                System.out.println("Student successfully deleted!");
+                return;
+            }
+        }
+        System.out.println("Student not found!");
+    }
+
+    public void addTeacher () {
             User user = new User();
             Scanner scanner = new Scanner(System.in);
             System.out.println("Ism kiriting :");
