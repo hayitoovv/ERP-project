@@ -10,9 +10,7 @@ public class Attendance {
     private User teacher;
     private List<StudentAttendanceDaily> attendedStudents;
 
-    public Attendance() {
-    }
-
+    public Attendance(){}
     public Attendance(String id, LocalDate date, String groupId, User teacher, List<StudentAttendanceDaily> attendedStudents) {
         this.id = id;
         this.date = date;
@@ -71,4 +69,5 @@ public class Attendance {
                 ", attendedStudents=" + attendedStudents +
                 '}';
     }
+
 }
