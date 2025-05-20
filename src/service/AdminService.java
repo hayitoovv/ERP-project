@@ -8,6 +8,7 @@ import entity.enums.Role;
 import java.util.Scanner;
 
 
+import static db.Datacourse.users;
 import static tools.Util.*;
 
 public class AdminService {
@@ -50,7 +51,7 @@ public class AdminService {
         String password = scanner.nextLine();
         User teacher = new User(fullName, email, password, Role.TEACHER);
 
-        Datacourse.users.add(teacher);
+        users.add(teacher);
 
         System.out.println("Teacher qoshildi");
 
