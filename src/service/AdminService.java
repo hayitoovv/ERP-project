@@ -1,6 +1,6 @@
 package service;
 
-import static tools.Util.scanner;
+import static tools.Util.*;
 
 public class AdminService {
     public void sevice(){
@@ -16,18 +16,24 @@ public class AdminService {
                     7 create group
                     8 edit group
                     """);
-            switch (scanner.nextInt()){
-                case 1->{
+            switch (scanner.nextLine()){
+                case "1"->{
                     return;
                 }
-                case 2->{}
-                case 3->{}
-                case 4->{}
-                case 5->{}
-                case 6->{}
-                case 7->{}
-                case 8->{}
+                case "2"->{}
+                case "3"->{
+                    editTeacher();
+                }
+                case "4"->{}
+                case "5"->{}
+                case "6"->{}
+                case "7"->{}
+                case "8"->{}
             }
         }
+    }
+
+    private void editTeacher() {
+
     }
 }
