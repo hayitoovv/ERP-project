@@ -87,7 +87,9 @@ public class AdminService {
                             1 group name;
                             2 maxLessonInMonth;
                             3 teacher;
-                            4 Set<User> students""");
+                            4 Set<User> students
+                            5 Delete """);
+
                     switch (strScanner.nextLine()) {
                         case "0" -> {
                             return;
